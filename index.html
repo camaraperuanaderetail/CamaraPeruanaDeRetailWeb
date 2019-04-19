@@ -70,7 +70,7 @@
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="index.html">Inicio</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="cursos/curso.html">Cursos</a></li>
+                    <li><a href="talleres/taller.html">Talleres</a></li>
                     <li><a href="diplomados/diplomados.html">Diplomados</a></li>
                     <li><a href="contactanos.html">Contactenos</a></li>
                 </ul>
@@ -159,7 +159,7 @@
                             <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
                         </ul>
                         <div class="intro-content">
-                            <a class="btn btn-success btn-diplomado" href="#" role="button">Ver todos nuestros diplomados</a>
+                            <a class="btn btn-success btn-diplomado" href="diplomados/diplomados.html" role="button">Ver todos nuestros diplomados</a>
                         </div>
                     </div>
                 </div>
@@ -271,7 +271,7 @@
                             <h3>Teléfono</h3>
                             <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
                             <a class="btn btn-info text-white mt-1" href="tel:+155895548855">Llamar</a>
-                            <a class="btn btn-info wsp-color mt-1" href="https://web.whatsapp.com/send?phone=51972547436"><i class="fab fa-whatsapp wsp"></i></a>
+                            <a id="n_wsp" class="btn btn-info wsp-color mt-1" href="https://web.whatsapp.com/send?phone=51972547436"><i class="fab fa-whatsapp wsp"></i></a>
                         </div>
                     </div>
 
@@ -279,7 +279,7 @@
                         <div class="contact-email">
                             <i class="ion-ios-email-outline"></i>
                             <h3>Correo</h3>
-                            <p><a href="mailto:info@example.com">info@example.com</a></p>
+                            <p><a href="mailto:contacto@camaraperuretail.com">contacto@camaraperuretail.com</a></p>
                         </div>
                     </div>
 
@@ -293,7 +293,7 @@
                     <form action="" method="post" role="form" class="contactForm">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre" data-msg="Por favor, ingrese su nombre" />
+                                <input type="text" name="name" class="form-control" id="name" data-rule="required" placeholder="Tu nombre" data-msg="Por favor, ingrese su nombre" />
                                 <div class="validation"></div>
                             </div>
                             <div class="form-group col-md-6">
@@ -302,7 +302,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-msg="Por favor, ingrese el asunto" />
+                            <input type="text" class="form-control" name="subject" id="subject" data-rule="required" placeholder="Asunto" data-msg="Por favor, ingrese el asunto" />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
