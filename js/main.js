@@ -159,30 +159,73 @@ $(window).on('load', function() {
 
 $(document).ready(function() {
     $("#btn-send").click(function() {
-        var nombre = document.getElementById("name").value;
-        var correo = document.getElementById("email").value;
-        var asunto = document.getElementById("subject").value;
-        var mensaje = document.getElementById("message").value;
-        Email.send({
-            Host: "smtp25.elasticemail.com",
-            Username: "royparra12@gmail.com",
-            Password: "e77d40fd-40af-41f4-babb-f9561473f955",
-            To: correo,
-            From: correo,
-            Subject: asunto,
-            Body: mensaje
-        }).then(
-            message => {
-                if (message == "OK") {
-                    var alert = document.getElementById("alert-send")
-                    alert.style.display = null;
-                    alert.classList.add("show")
-                } else {
-                    var alert = document.getElementById("alert-notsend")
-                    alert.style.display = null;
-                    alert.classList.add("show")
+        var nombre = document.getElementById("name");
+        var correo = document.getElementById("email");
+        var asunto = document.getElementById("subject");
+        var mensaje = document.getElementById("message");
+        if (nombre.value != "" && correo.value != "" && asunto.value != "" && mensaje.value != "") {
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "camaraperuretail@gmail.com",
+                Password: "cpr17042019",
+                port: "465",
+                To: "contacto@camaraperuretail.com",
+                From: correo.value,
+                Subject: asunto.value,
+                Body: '<h3>' + nombre.value + ' envió el siguiente mensaje: </h3><h4>' + mensaje.value + '</h4>'
+            }).then(
+                message => {
+                    if (message == "OK") {
+                        var alert = document.getElementById("alert-send")
+                        alert.style.display = null;
+                        alert.classList.add("show")
+                        nombre.value = "";
+                        correo.value = "";
+                        asunto.value = "";
+                        mensaje.value = "";
+                        setTimeout(function() {
+                            alert.style.display = "none";
+                            alert.classList.remove("show");
+                        }, 3000);
+
+                    } else {
+                        var alert = document.getElementById("alert-notsend")
+                        alert.style.display = null;
+                        alert.classList.add("show")
+                        setTimeout(function() {
+                            alert.style.display = "none";
+                            alert.classList.remove("show");
+                        }, 3000);
+                    }
                 }
-            }
-        );
+            );
+        }
     });
+});
+
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
+$(document).ready(function() {
+    if (isMobile.any()) {
+        $("#n_wsp").attr("href", "https://api.whatsapp.com/send?phone=51972547436")
+    }
 });

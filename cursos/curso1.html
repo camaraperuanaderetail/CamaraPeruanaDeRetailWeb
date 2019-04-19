@@ -43,7 +43,7 @@
 
 
 
-    <section id="contact" class="wow fadeInUp">
+    <section id="contact" class="wow fadeInUp" style="margin-left: 10px; margin-right: 10px">
         <div class="container">
 
             <div class="row">
@@ -89,7 +89,7 @@
                                             <h3>Teléfono</h3>
                                             <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
                                             <a class="btn btn-info text-white" href="tel:+155895548855">Llamar</a>
-                                            <a class="btn btn-info wsp-color" href="https://web.whatsapp.com/send?phone=51972547436"><i class="fab fa-whatsapp wsp"></i></a>
+                                            <a id="n_wsp" class="btn btn-info wsp-color" href="https://web.whatsapp.com/send?phone=51972547436"><i class="fab fa-whatsapp wsp"></i></a>
                                         </div>
                                     </div>
 
@@ -97,7 +97,7 @@
                                         <div class="contact-email">
                                             <i class="fas fa-envelope"></i>
                                             <h3>Correo</h3>
-                                            <p><a href="mailto:info@example.com">info@example.com</a></p>
+                                            <p style="word-wrap: break-word;"><a href="mailto:contacto@camaraperuretail.com">contacto@camaraperuretail.com</a></p>
                                         </div>
                                     </div>
 
@@ -109,7 +109,7 @@
                                         <form action="" method="post" role="form" class="contactForm">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre" data-rule="minlen:4" data-msg="Por favor, ingrese su nombre" />
+                                                    <input type="text" name="name" class="form-control" id="name" data-rule="required" placeholder="Tu nombre" data-msg="Por favor, ingrese su nombre" />
                                                     <div class="validation"></div>
                                                 </div>
                                                 <div class="form-group col-md-6">
@@ -118,14 +118,26 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Por favor, ingrese el asunto" />
+                                                <input type="text" class="form-control" name="subject" id="subject" data-rule="required" placeholder="Asunto" data-msg="Por favor, ingrese el asunto" />
                                                 <div class="validation"></div>
                                             </div>
                                             <div class="form-group">
-                                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Por favor, escribe algo para nosotros" placeholder="Mensaje"></textarea>
+                                                <textarea class="form-control" name="message" id="message" rows="5" data-rule="required" data-msg="Por favor, escribe algo para nosotros" placeholder="Mensaje"></textarea>
                                                 <div class="validation"></div>
                                             </div>
-                                            <div class="text-center"><button type="submit">Enviar mensaje</button></div>
+                                            <div class="text-center"><button id="btn-send" type="submit">Enviar mensaje</button></div><br>
+                                            <div style="display: none" id="alert-send" class="alert alert-success alert-dismissible fade text-center" role="alert">
+                                                <strong><i class="fas fa-check"></i></strong> El mensaje fue enviado correctamente.
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                            </div>
+                                            <div style="display: none" id="alert-notsend" class="alert alert-danger alert-dismissible fade text-center" role="alert">
+                                                <strong><i class="fas fa-times"></i></strong> El mensaje no se envío.
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
                                         </form>
                                     </div>
 
@@ -184,6 +196,7 @@
 
     <!-- Template Main Javascript File -->
     <script src="../js/main.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 
 </html>
