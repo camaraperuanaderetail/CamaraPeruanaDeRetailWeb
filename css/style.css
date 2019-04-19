@@ -293,7 +293,7 @@ h6 {
     left: 0;
     bottom: 0;
     z-index: 7;
-    opacity: 0.7;
+    opacity: 1;
 }
 
 #intro #intro-carousel .item {
@@ -846,7 +846,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     box-sizing: content-box;
     margin: 30px 15px;
     text-align: center;
-    min-height: 350px;
+    min-height: 395px;
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -866,7 +866,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #testimonials .testimonial-item h3 {
     font-size: 18px;
     font-weight: bold;
-    margin: 10px 0 5px 0;
+    margin: 0px 0 5px 0;
     color: #111;
 }
 
@@ -1173,8 +1173,16 @@ body.mobile-nav-active #mobile-nav-toggle {
     color: #195c77;
 }
 
+.card-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 155px;
+}
+
 .img-header {
     background-color: #081e5b;
+    height: 240px;
 }
 
 .testimonial-item:hover {
