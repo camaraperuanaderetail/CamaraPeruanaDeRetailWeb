@@ -112,7 +112,7 @@ jQuery(document).ready(function($) {
 
 
     // Porfolio - uses the magnific popup jQuery plugin
-    $('.portfolio-popup').magnificPopup({
+    /*$('.portfolio-popup').magnificPopup({
         type: 'image',
         removalDelay: 300,
         mainClass: 'mfp-fade',
@@ -127,7 +127,7 @@ jQuery(document).ready(function($) {
                 return openerElement.is('img') ? openerElement : openerElement.find('img');
             }
         }
-    });
+    });*/
 
     // Testimonials carousel (uses the Owl Carousel library)
     $(".testimonials-carousel").owlCarousel({
